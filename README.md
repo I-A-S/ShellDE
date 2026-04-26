@@ -43,6 +43,14 @@ It is designed as a practical foundation for building custom coding environments
 
 ## Getting Started
 
+First run
+
+```bash
+python3 custom-setup.py <your_new_ide_name>
+```
+
+then
+
 ```bash
 npm install
 npm run dev
@@ -82,7 +90,7 @@ ShellDE includes built-in Python language support:
 
 If `ruff` is not installed or not found on `PATH`, Ruff-backed features will be unavailable, but the rest of the application remains functional.
 
-## Current Scope
+## Scope
 
 ShellDE is intentionally minimal and focused on core IDE shell capabilities. It provides a clean base for further extensions such as additional language servers, richer debugging flows, extension systems, and advanced workspace operations.
 
