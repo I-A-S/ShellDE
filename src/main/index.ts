@@ -132,11 +132,12 @@ app.whenReady().then(() => {
   ipcMain.on('ping', () => console.log('pong'))
 
   function getDirTree(dirPath: string): DirTreeNode {
+    const children: DirTreeNode[] = []
     const result: DirTreeNode = {
       name: path.basename(dirPath),
       path: dirPath,
       isDirectory: true,
-      children: []
+      children
     }
 
     try {
@@ -147,13 +148,13 @@ app.whenReady().then(() => {
 
         const fullPath = path.join(dirPath, item.name)
         if (item.isDirectory()) {
-          result.children.push(getDirTree(fullPath))
+          children.push(getDirTree(fullPath))
         } else {
-          result.children.push({ name: item.name, path: fullPath, isDirectory: false })
+          children.push({ name: item.name, path: fullPath, isDirectory: false })
         }
       }
       // Sort: folders first, then files
-      result.children.sort((a, b) => {
+      children.sort((a, b) => {
         if (a.isDirectory === b.isDirectory) return a.name.localeCompare(b.name)
         return a.isDirectory ? -1 : 1
       })
