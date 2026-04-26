@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useEffect, useRef, useState, type MouseEvent } from 'react'
-import { Terminal } from 'xterm'
+import { Terminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
 import type { TermTab } from '../types'
 

@@ -2,7 +2,7 @@
 import { useRef, useEffect, useState, type MouseEvent } from 'react'
 import { loader } from '@monaco-editor/react'
 import * as monaco from 'monaco-editor'
-import 'xterm/css/xterm.css'
+import '@xterm/xterm/css/xterm.css'
 import appIcon from './assets/icon.svg'
 import type { editor as MonacoEditor } from 'monaco-editor'
 import { LeftPane } from './components/LeftPane'
