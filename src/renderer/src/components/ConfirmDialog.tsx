@@ -20,7 +20,7 @@ export function ConfirmDialog({
   defaultAction = 'cancel',
   onCancel,
   onConfirm
-}: ConfirmDialogProps) {
+}: ConfirmDialogProps): JSX.Element | null {
   const cancelButtonRef = useRef<HTMLButtonElement | null>(null)
   const confirmButtonRef = useRef<HTMLButtonElement | null>(null)
 

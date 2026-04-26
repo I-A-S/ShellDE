@@ -16,9 +16,16 @@ import {
   type SpawnOptions
 } from './lsp/manager'
 
-const getShell = () => {
+const getShell = (): string => {
   if (os.platform() === 'win32') return 'powershell.exe'
   return process.env.SHELL || 'bash' // Captures bash or zsh automatically on Linux/Mac
+}
+
+type DirTreeNode = {
+  name: string
+  path: string
+  isDirectory: boolean
+  children?: DirTreeNode[]
 }
 
 const ptySessions: Record<string, pty.IPty> = {}
@@ -124,12 +131,12 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
-  function getDirTree(dirPath: string) {
-    const result = {
+  function getDirTree(dirPath: string): DirTreeNode {
+    const result: DirTreeNode = {
       name: path.basename(dirPath),
       path: dirPath,
       isDirectory: true,
-      children: [] as any[]
+      children: []
     }
 
     try {

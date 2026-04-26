@@ -15,6 +15,13 @@ export type LspSpawnResult =
 
 export type LspExitInfo = { code: number | null; signal: string | null }
 
+export type DirTreeNode = {
+  name: string
+  path: string
+  isDirectory: boolean
+  children?: DirTreeNode[]
+}
+
 export type LspAPI = {
   spawn: (options: LspSpawnOptions) => Promise<LspSpawnResult>
   write: (id: string, payloadBase64: string) => void
@@ -27,10 +34,10 @@ export type LspAPI = {
 type AppAPI = {
   triggerBuild: () => void
   onTerminalOutput: (callback: (data: string) => void) => void
-  openFolder: () => Promise<any>
+  openFolder: () => Promise<DirTreeNode | null>
   getLastWorkspace: () => Promise<string | null>
   setLastWorkspace: (workspacePath: string | null) => Promise<boolean>
-  readDirTree: (dirPath: string) => Promise<any>
+  readDirTree: (dirPath: string) => Promise<DirTreeNode>
   readFile: (filePath: string) => Promise<string>
   writeFile: (filePath: string, content: string) => Promise<boolean>
   createFile: (dirPath: string, name: string) => Promise<boolean>

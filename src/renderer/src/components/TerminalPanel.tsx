@@ -19,7 +19,7 @@ export function TerminalPanel({
   onSelectTab,
   onCloseTab,
   onCreateTerminal
-}: TerminalPanelProps) {
+}: TerminalPanelProps): JSX.Element {
   return (
     <div
       style={{

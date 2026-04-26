@@ -12,7 +12,7 @@ export function FooterBar({
   column,
   language = 'plaintext',
   encoding = 'UTF-8'
-}: FooterBarProps) {
+}: FooterBarProps): JSX.Element {
   return (
     <div
       style={{

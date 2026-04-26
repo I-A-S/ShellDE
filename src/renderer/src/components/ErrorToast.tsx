@@ -3,7 +3,7 @@ type ErrorToastProps = {
   onClose: () => void
 }
 
-export function ErrorToast({ message, onClose }: ErrorToastProps) {
+export function ErrorToast({ message, onClose }: ErrorToastProps): JSX.Element | null {
   if (!message) return null
   return (
     <div

@@ -8,7 +8,13 @@ type ContextMenuProps = {
   ) => void
 }
 
-export function ContextMenu({ x, y, hasContextNode, hasClipboard, onAction }: ContextMenuProps) {
+export function ContextMenu({
+  x,
+  y,
+  hasContextNode,
+  hasClipboard,
+  onAction
+}: ContextMenuProps): JSX.Element {
   return (
     <div
       style={{

@@ -16,7 +16,7 @@ export function NameDialog({
   onValueChange,
   onCancel,
   onConfirm
-}: NameDialogProps) {
+}: NameDialogProps): JSX.Element | null {
   if (!isOpen) return null
   return (
     <div

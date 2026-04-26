@@ -19,7 +19,7 @@ export function FileTreeNode({
   onFileClick,
   onContextMenu,
   depth = 0
-}: FileTreeNodeProps) {
+}: FileTreeNodeProps): JSX.Element {
   const [isOpen, setIsOpen] = useState(depth < 1)
   const paddingLeft = depth * 12 + 8
   const isSelected = selectedPath === node.path

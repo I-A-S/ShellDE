@@ -58,6 +58,31 @@ npm run dev
 
 This starts the Electron app in development mode with hot reload.
 
+### Windows: fix `npm ci` / `npm install` failing with `MSB8040` (node-pty)
+
+If install fails during `electron-builder install-app-deps` with:
+
+- `error MSB8040: Spectre-mitigated libraries are required for this project`
+
+install the required Visual Studio Build Tools components:
+
+1. Open **Visual Studio Installer** -> **Build Tools 2022 (or 2026)** -> **Modify**
+2. In **Individual components**, install:
+   - `MSVC v143 - VS 2022 C++ x64/x86 build tools (Latest)`
+   - `MSVC v143 - VS 2022 C++ x64/x86 Spectre-mitigated libs (Latest)`
+   - `Windows 10/11 SDK` (latest available)
+3. Re-run:
+
+```bash
+npm ci
+```
+
+Optional quick check:
+
+```bash
+npx electron-builder install-app-deps
+```
+
 ## Available Scripts
 
 - `npm run dev` - Start app in development mode

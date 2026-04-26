@@ -2,6 +2,7 @@
 // runs the LSP initialize handshake, and verifies type-check diagnostics reach us.
 //
 // Run with: node scripts/lsp-smoke.cjs
+/* eslint-disable @typescript-eslint/no-require-imports, @typescript-eslint/explicit-function-return-type */
 const { spawn } = require('child_process')
 const path = require('path')
 

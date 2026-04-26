@@ -46,7 +46,7 @@ export function LeftPane({
   onOpenContextMenu,
   onSelectNode,
   onFileClick
-}: LeftPaneProps) {
+}: LeftPaneProps): JSX.Element {
   const canUseSearch = Boolean(fileTree)
 
   return (
