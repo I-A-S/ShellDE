@@ -12,6 +12,8 @@
 ShellDE is a lightweight desktop IDE shell built with Electron, React, TypeScript, Monaco Editor, and xterm.js.
 It is designed as a practical foundation for building custom coding environments with an integrated editor, terminal, workspace tree, and Language Server Protocol (LSP) support.
 
+<img src="preview.png" alt="ShellDE Preview" width="1920" style="border-radius: 1.15rem;"/>
+
 ## Highlights
 
 - Frameless, modern desktop UI powered by Electron + React
