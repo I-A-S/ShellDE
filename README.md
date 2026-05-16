@@ -121,4 +121,4 @@ ShellDE is intentionally minimal and focused on core IDE shell capabilities. It 
 
 ## **License**
 
-Copyright (C) 2026 IAS. Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+Copyright (C) 2026 I-A-S. Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
